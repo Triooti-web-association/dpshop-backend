@@ -63,7 +63,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 registry.addMapping("/**")
                         //    .allowedOrigins("http://localhost:4200")
                         // .allowedOrigins("http://localhost:8080/shopmania")
-                        .allowedOrigins("https://soulbusiness.herokuapp.com")
+                      //  .allowedOrigins("https://soulbusiness.herokuapp.com")
+                        .allowedOrigins("http://62.171.128.8:8080/soulbusiness")
                         //      .allowedMethods("*")
                         .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                         .maxAge(3600L)
@@ -230,7 +231,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**/states/findById/{idState}").permitAll()
                 .antMatchers("/**/states/all").permitAll()
                 .antMatchers("/**/states/searchAllStatesOrderByIdDesc").permitAll()
-                .antMatchers("/**/states/searchStateByCountryCode/*").permitAll()
+                .antMatchers("/**/states/searchStateByCountryCode/**").permitAll()
                 .antMatchers("/**/states/delete/{idState}").permitAll()
 
                 .antMatchers("/**/utilisateurs/all").permitAll()
@@ -247,6 +248,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**/addresslivraisons/all").permitAll()
                 .antMatchers("/**/addresslivraisons/searchAllAddressLivraisonsOrderByIdDesc").permitAll()
                 .antMatchers("/**/addresseclients/searchAllAddressClientsOrderByIdDesc").permitAll()
+                .antMatchers("/**/addresseclients/all").permitAll()
 
                 .anyRequest().authenticated()
                 .and()

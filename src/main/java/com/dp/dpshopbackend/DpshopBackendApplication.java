@@ -1,7 +1,5 @@
 package com.dp.dpshopbackend;
 
-import com.dp.dpshopbackend.enumeration.RoleName;
-import com.dp.dpshopbackend.models.*;
 import com.dp.dpshopbackend.repository.*;
 import com.dp.dpshopbackend.services.UtilisateurService;
 import org.slf4j.Logger;
@@ -16,9 +14,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @SpringBootApplication
 public class DpshopBackendApplication implements CommandLineRunner {
@@ -71,6 +66,7 @@ public class DpshopBackendApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        /*
         Category c1 = categoryRepository.save(new Category(1L, "cat1", "cat1"));
         Category c2 = categoryRepository.save(new Category(2L, "cat2", "cat2"));
         Category c3 = categoryRepository.save(new Category(3L, "cat3", "cat3"));
@@ -107,21 +103,16 @@ public class DpshopBackendApplication implements CommandLineRunner {
         Fournisseur f3 = fournisseurRepository.save(new Fournisseur(3L, "f3", "f3", "f3", "f3", "m.diallo233@unig-zig.sn", "f3", "f3", "f3", p2));
         Fournisseur f4 = fournisseurRepository.save(new Fournisseur(4L, "f4", "f4", "f4", "f4", "thirtsoft@gmail.com", "f4", "f4", "f4", p1));
 
-      /*  Client cl1 = clientRepository.save(new Client("cl1", "cl1", "cl1", "779440310" ));
-        Client cl2 = clientRepository.save(new Client("cl2", "cl2", "cl2", "778102567" ));
-        Client cl3 = clientRepository.save(new Client("cl3", "cl3", "cl3", "774567321"));
-        Client cl4 = clientRepository.save(new Client("cl4", "cl4", "cl4", "776543298" ));
-*/
         Country count1 = countryRepository.save(new Country(1L, "SEN", "SENEGAL"));
         Country count2 = countryRepository.save(new Country(2L, "USA", "Etats-Unies"));
         Country count3 = countryRepository.save(new Country(3L, "GUIN", "Guinnée-Conakry"));
         Country count4 = countryRepository.save(new Country(4L, "JAP", "Japon"));
-        Country count5 = countryRepository.save(new Country(5L, "GB","Gambie"));
+        Country count5 = countryRepository.save(new Country(5L, "GB", "Gambie"));
         Country count6 = countryRepository.save(new Country(6L, "CH", "Chine"));
         Country count7 = countryRepository.save(new Country(7L, "AR", "Arabie-Souadite"));
         Country count8 = countryRepository.save(new Country(8L, "FR", "France"));
-        Country count9 = countryRepository.save(new Country(9L,  "NG", "Nigeria"));
-        Country count10 = countryRepository.save(new Country(10L,  "Ind", "Inde"));
+        Country count9 = countryRepository.save(new Country(9L, "NG", "Nigeria"));
+        Country count10 = countryRepository.save(new Country(10L, "Ind", "Inde"));
 
         State state1 = stateRepository.save(new State(1L, "Dakar", count1));
         State state2 = stateRepository.save(new State(2L, "Ziguinchor", count1));
@@ -134,11 +125,6 @@ public class DpshopBackendApplication implements CommandLineRunner {
         State state9 = stateRepository.save(new State(9L, "Dalaba", count3));
         State state10 = stateRepository.save(new State(10L, "Accra", count9));
 
-       /* AddressLivraison a1 = addressLivraisonRepository.save(new AddressLivraison(1L, "add1", "add1", "add1", "add1", "add1", "add1", state1));
-        AddressLivraison a2 = addressLivraisonRepository.save(new AddressLivraison(2L, "add2", "add2", "add2", "add2", "add2", "add2", state2));
-        AddressLivraison a3 = addressLivraisonRepository.save(new AddressLivraison(3L, "add3", "add3", "add3", "add3", "add3", "add3", state3));
-        AddressLivraison a4 = addressLivraisonRepository.save(new AddressLivraison(4L, "add4", "add4", "add4", "add4", "add4", "add4", state4));
-*/
 
         Role useRole = new Role(RoleName.ROLE_USER);
         Role assistantRole = new Role(RoleName.ROLE_ASSISTANT);
@@ -169,7 +155,9 @@ public class DpshopBackendApplication implements CommandLineRunner {
         utilisateurRepository.save(admin);
 
         utilisateurService.addRoleToUser("Admin", RoleName.ROLE_ADMIN);
-        utilisateurService.addRoleToUser("User", RoleName.ROLE_USER);
+
+        */
+        //    utilisateurService.addRoleToUser("User", RoleName.ROLE_USER);
 
     }
 }
